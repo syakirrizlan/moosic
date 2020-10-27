@@ -1,0 +1,20 @@
+<div class="container" style="padding-top: 100px;">
+    <h1 style="color:rgb(0, 38, 255); font-family:'Cooper Black'">Looking for a new taste of music?</h1>
+    <p class="lead">Then you are in the right place, continue by search the song below
+      <br>
+    </p>
+
+    <div class="row">
+        <div class="col-12">
+            <input #term type="text" aria-label="Large" class="form-control" (keyup)="searchArtist(term.value)"
+                placeholder="Search artist..." style="width: 100%;" />
+
+            <app-loading class="m-5" *ngIf="loading"></app-loading>
+
+        </div>
+    </div>
+
+    <div class="row" style="padding: 30px">
+        <app-cards *ngIf="!loading" [items]="searchedArtists"></app-cards>
+    </div>
+</div>
